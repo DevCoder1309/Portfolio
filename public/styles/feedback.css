@@ -1,0 +1,73 @@
+.navbar {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.navbar:hover {
+    text-decoration: underline;
+}
+
+
+main{
+    height: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*Do not forget next line, or items won't wrap*/
+    flex-wrap: wrap;
+}
+
+
+body, html, main {
+    background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+
+#div1 {
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    font-weight: 700;
+    font-family: sans-serif;
+    font-style: italic;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    flex: 1 0 50%;
+}
+
+
+@media(max-width > 800px){
+    #left{
+        flex-wrap: wrap;
+        width: 100%;
+        
+    }
+    #right{
+        margin-left: 50%;
+        width: 100%;
+    }
+    .card.mb-3{
+        width: 20px;
+        height: 20px;
+    }
+}
