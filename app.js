@@ -14,15 +14,13 @@ const session = require("express-session");
 const AppError = require("./utils/ExpressError");
 const MongoDBStore = require("connect-mongo")(session);
 
-
+const dbUrl = process.env.DB_URL;
 const store = new MongoDBStore({
   url: dbUrl,
   secret: "thisshouldbeabettersecret",
   touchAfter: 24 * 60 * 60,
 });
 
-
-const dbUrl = process.env.DB_URL;
 
 const secretConfig = {
   store,
