@@ -12,10 +12,20 @@ const methodOverride = require("method-override");
 const flash = require("connect-flash");
 const session = require("express-session");
 const AppError = require("./utils/ExpressError");
+const MongoDBStore = require("connect-mongo")(session);
+
+
+const store = new MongoDBStore({
+  url: dbUrl,
+  secret: "thisshouldbeabettersecret",
+  touchAfter: 24 * 60 * 60,
+});
+
 
 const dbUrl = process.env.DB_URL;
 
 const secretConfig = {
+  store,
   secret: "thisshouldbeabettersecret",
   resave: false,
   saveUninitialized: true,
