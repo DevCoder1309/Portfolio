@@ -14,4 +14,21 @@ body {
     height: 100%;
 }
 
-/* @media (max-width: ) */
+main {
+    min-height: calc(100vh - 56px);
+    /* Adjust 56px based on your actual header height */
+    overflow-y: auto;
+    /* Enable vertical overflow with a scroll bar */
+}
+
+#left,
+#right {
+    width: 100%;
+}
+
+
+.card.mb-3 {
+    width: 100%;
+    margin-bottom: 15px;
+    /* Adjust as needed for spacing between feedback items */
+}
