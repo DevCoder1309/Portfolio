@@ -1,52 +1,82 @@
 <link rel="stylesheet" href="/styles/feedback.css">
 <% layout('layouts/boilerplate') %>
-<br>
-
-<div class="col-6 mx-4">
-    <p class="text-muted font-weight-bold">Please Feel Free to submit a genuine review/feedback of my projects and working alongside me</p>
-</div>
-<br>  
-
-<div class="row">
-    <div class="col-12 col-md-6" id="left">
-        <div class="card mb-3 bg-transparent">
-            <form action="/feedback" method="post" novalidate class="needs-validation">
-                <div class="form-group row d-flex flex-column flex-sm-wrap" id="div1">
-                    <div class="col-8 ml-5">
-                        <label for="exampleInputEmail1" class="font-weight-bold text-light">Name</label>
-                        <input type="text" name="name" class="form-control input-sm bg-transparent" id="exampleInputEmail1" placeholder="Name" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row d-flex flex-column flex-sm-wrap" id="div1">
-                    <div class="col-8 ml-5">
-                        <label for="feedback" class="font-weight-bold text-light">Feedback</label>
-                        <textarea name="feedback" id="feedback" cols="20" rows="10" class="form-control input-sm bg-transparent" required></textarea>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-success ml-5" id="div1">Submit</button>
-            </form>
-        </div>
+<% if(feedback.length !== 0) {%>
+<h6 class="text-muted ml-5 font-weight-bold mt-5 text-center">Please Feel Free to post genuine reviews of working alongside me</h3>
+<div class="column-fluid">
+<div class="row mt-5">
+  <div class="column">
+    <div class="col-6 offset-3" id="div1">
+      <div class="card bg-dark border border-dark rounded-top" style="width: 80rem;">
+      <div class="card-body">
+        <h5 class="card-title text-light" style="height: 5rem; font-size: 2rem;">Feedback</h5>
+        <p class="card-text font-weight-200 text-light"><form action="/feedback" method="post">
+  <div class="form-group">
+    <label for="name" class="text-light font-weight-bold">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="feedback" class="text-light font-weight-bold">Feedback</label>
+    <textarea name="feedback" id="feedback" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form></p>
+      </div>
     </div>
-
-    <div class="col-12 col-md-6" id="right">
-        <% for(let feed of feedback) {%>
-            <div class="card ml-5 mb-5 bg-info col-6" id="feeds">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-light" id="foo">
-                        Posted By: <%= feed.name %>
-                    </h6>
-                    <p class="card-text text-light" id="foo">Review: <%= feed.feedback %></p>
-                </div>
-            </div>
-        <% } %>
     </div>
+  </div>
+  <div class="column offset-1">
+    <div class="col-12 offset-3" id="div1">
+    <% for(let feed of feedback) {%>
+      <div class="card bg-light border border-dark rounded-top" style="width: 80rem;">
+      <div class="card-body">
+        <h5 class="card-title text-dark" style="font-size: 1.2rem; font-weight: bold; text-decoration: underline 2px;">POSTED BY: <%= feed.name %></h5>
+        <p class="card-text font-weight-bold text-dark">Review: <%= feed.feedback %></p>
+      </div>
+    </div>
+    <br>
+    <% } %>
+    </div>
+  </div>
 </div>
+</div>
+<% }  else {%>
+<h6 class="text-muted ml-5 font-weight-bold mt-5 text-center">Please Feel Free to post genuine reviews of working alongside me</h3>
+<div class="column-fluid">
+<div class="row mt-5">
+  <div class="column">
+    <div class="col-6 offset-3" id="div1">
+      <div class="card bg-dark border border-dark rounded-top" style="width: 80rem;">
+      <div class="card-body">
+        <h5 class="card-title text-light" style="height: 5rem; font-size: 2rem;">Feedback</h5>
+        <p class="card-text font-weight-200 text-light"><form action="/feedback" method="post">
+  <div class="form-group">
+    <label for="name" class="text-light font-weight-bold">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="feedback" class="text-light font-weight-bold">Feedback</label>
+    <textarea name="feedback" id="feedback" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form></p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
     (function () {

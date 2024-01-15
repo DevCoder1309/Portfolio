@@ -1,35 +1,269 @@
-.navbar {
-    background-color: rgba(255, 255, 255, 0.2);
+
+#navbar:hover {
+    color: rgb(230, 59, 87);
+    transition: 0.5s;
 }
 
-@keyframes slideInFromLeft {
+
+
+
+
+main {
+    min-height: calc(100vh - 56px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+
+    text-align: center;
+    margin-bottom: 20px;
+    
+    width: 100%;
+}
+
+
+#row2 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+h1 {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+   
+}
+
+
+.column {
+    width: 80%;
+ 
+}
+@media (min-width: 752px){
+    #image1 {
+        margin-right: 20px;
+    }
+    
+    #image2 {
+        margin-left: 80px;
+    }
+}
+
+
+#my-chart {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 30rem;
+    max-width: 1000px;
+    margin: auto auto;
+    margin-left: 240px
+}
+
+
+#one {
+    --color: #3498db;
+    --size: 0.4;
+}
+
+#two {
+    --color: #e74c3c;
+    --size: 0.2;
+}
+
+#three {
+    --color: #2ecc71;
+    --size: 0.7;
+}
+
+#four {
+    --color: #f39c12;
+    --size: 0.8;
+}
+
+#five {
+    --color: #9b59b6;
+    --size: 0.6;
+}
+
+#six {
+    
+    --color: #2ecc71;
+    --size: 0.7;
+}
+
+#seven {
+    
+    --color: #3498db;
+    --size: 0.7;
+  
+}
+
+#eight {
+   
+    --color: #f39c12;
+    --size: 0.6;
+   
+}
+
+
+
+@media (min-width: 751px) {
+    .row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .column {
+        width: 30%;
+        /* Adjust the width of columns for larger screens */
+    }
+
+    #dynamic p,
+    #efficiency p,
+    #security p {
+        margin-top: 0;
+        /* Reset margin-top */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        /* Ensure the paragraph takes up the full height of the SVG */
+    }
+
+
+}
+
+@media (max-width: 752px) {
+    #my-chart {
+    max-width: 800px;
+    margin: auto auto;
+    }
+
+
+        #one {
+            --color: #3498db;
+            --size: 0.2;
+        }
+    
+        #two {
+            --color: #e74c3c;
+            --size: 0.1;
+        }
+    
+        #three {
+            --color: #2ecc71;
+            --size: 0.3;
+        }
+    
+        #four {
+            --color: #f39c12;
+            --size: 0.4;
+        }
+    
+        #five {
+            --color: #9b59b6;
+            --size: 0.3;
+        }
+    
+        #six {
+    
+            --color: #2ecc71;
+            --size: 0.3;
+        }
+    
+        #seven {
+    
+            --color: #3498db;
+            --size: 0.4;
+    
+        }
+    
+        #eight {
+    
+            --color: #f39c12;
+            --size: 0.4;
+    
+        }
+
+}
+
+
+@keyframes fadeInAnimation {
     0% {
-        transform: translateX(-100%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-.navbar:hover {
-    text-decoration: underline;
+
+@keyframes fadeInAnimation2 {
+    100% {
+        opacity: 0;
+    }
+
+    0% {
+        opacity: 1;
+    }
 }
 
 
-body, html, main {
-    background-image:url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+
+#row2 {
+    transition: transform 0.5s ease;
 }
 
-#div1 {
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    font-weight: 700;
-    font-family: sans-serif;
-    font-style: italic;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+.column img {
+    transition: opacity 0.5s ease;
+    /* Add a transition for smooth opacity change */
+    animation: fadeInAnimation 1s ease;
+    /* Apply fadeInAnimation to the images */
+}
+
+/* @keyframes fadeInAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+} */
+
+
+@media (max-width: 750px) {
+    .column img {
+        animation: fadeInAnimation 1s ease;
+        /* Apply fadeInAnimation to the images on mobile */
+    }
+}
+
+@media (min-width: 751px) {
+    /* Styles for larger screens */
+
+    #row2.scrolled {
+        transform: translateX(-100px);
+        /* Move the row to the right when scrolled */
+    }
+
+    #row2.scrolled .column img {
+        opacity: 0;
+        /* Hide the images when scrolled */
+    }
 }

@@ -1,7 +1,14 @@
-/* Existing CSS */
+#navbar:hover {
+    color: rgb(230, 59, 87);
+    transition: 0.5s;
+}
 
-.navbar {
-    /* background-color: rgba(255, 255, 255, 0.2); */
+
+main {
+    min-height: calc(100vh - 56px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 @keyframes slideInFromLeft {
@@ -14,91 +21,61 @@
     }
 }
 
-.navbar:hover {
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
     text-decoration: underline;
-}
-
-main {
-    min-height: calc(100vh - 56px);
-    /* Adjust 56px based on your actual header height */
-    overflow-y: auto;
-    /* Enable vertical overflow with a scroll bar */
-}
-
-#left,
-#right {
-    width: 100%;
-}
-
-
-.card.mb-3 {
-    width: 100%;
-    margin-bottom: 15px;
-    /* Adjust as needed for spacing between feedback items */
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .row {
-    width: 100%;
-    height: 100%;
     display: flex;
-    /* Do not forget next line, or items won't wrap */
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* Center vertically */
 }
 
-body,
-html,
-main {
-    background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
+
+.column {
+    text-align: center;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+}
+
+.card {
+    animation: slideInFromLeft 1s ease;
+    max-width: 300px;
     width: 100%;
-    /* overflow: hidden; */
+    /* margin: 10px; */
+    text-align: center;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
 }
 
-#div1 {
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    font-weight: 700;
-    font-family: sans-serif;
-    font-style: italic;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    flex: 1 0 50%;
-}
-
-
-
-/* Existing CSS */
-/* Existing CSS */
-
-@media (max-width: 600px) {
-
-    #left,
-    #right {
-        width: 100%;
-        margin: 0;
-        /* Remove any margin */
-    }
-
-    #right {
-        margin-top: 15px;
-        /* Add a top margin for spacing */
-    }
-
-    .card.mb-3 {
-        width: 100%;
-        margin-bottom: 50px;
-        /* Adjust as needed for spacing between feedback items */
+@media (max-width: 800px) {
+    body {
+        /* padding-top: 56px; */
+        overflow-x: hidden;
+        /* Disable horizontal scrolling */
     }
 
     .row {
-        display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-right: 15rem;
+        /* overflow-x: hidden; */
+    }
+
+    .column {
+        width: 100%;
+        margin: 10px 0;
+        /* overflow-x: hidden; */
     }
 }
