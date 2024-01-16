@@ -35,5 +35,11 @@ router.get('/feedback', async (req, res) => {
     res.render('feedback.ejs', {name, feedback})
 })
 
+router.get("/contacts", async (req, res) => {
+  const name = "Contacts";
+  res.render("contacts.ejs", { name });
+});
+
+
 
 module.exports = router
